@@ -19,10 +19,11 @@ This project uses JavaScript and OOP (Object-Oriented Programming) to select a r
 - Progressive Enhancement - JavaScript added without making the page dependent upon JavaScript. -->
 
 ## Additional features
-<!-- In addition to completing the basic requirements for this techdegree project, I also built additional features and functionality using JavaScript such as:
+In addition to completing the basic requirements for this techdegree project, I also added additional features including:
 
-- [x] Conditional error messages on some fields
-- [x] Real-time error messages on some fields -->
+- [x] Added functionality allowing players to use physical keyboard (instead of just the on-screen keyboard)
+- [x] Personalized CSS styling
+
 
 ## Code example
 <!-- An example of one of the JavaScript functions in this project:
