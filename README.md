@@ -1,7 +1,7 @@
 # Project 4 - Full Stack JavaScript Techdegree
 
 ### OOP Game Show App
-This project uses JavaScript and OOP (Object-Oriented Programming) to select a random, hidden phrase, which a player tries to guess, by clicking letters on an onscreen keyboard.
+This project uses Object-Oriented JavaScript to select a random, hidden phrase, which a player tries to guess, by clicking letters on an onscreen keyboard.
 
 ***
 <!-- <img src="https://res.cloudinary.com/dtqevfsxh/image/upload/v1550234182/portfolio/interactive-form-1.png" width="400px"><img src="https://res.cloudinary.com/dtqevfsxh/image/upload/v1550218646/portfolio/screenshot-padding-github.png" width="50px">
@@ -13,7 +13,7 @@ This project uses JavaScript and OOP (Object-Oriented Programming) to select a r
 ## Project objective
 <!-- To complete this project I built customized conditional behavior and interactivity. Form validation is handled on the client side using JavaScript and regular expressions, with customized error messages for each field. Also, jQuery is used in this project which allowed for a shorter and simplified syntax. -->
 
-## Techniques and concepts:
+## Techniques and concepts
 <!-- - jQuery - For document traversal/manipulation, event handling and animation
 - Regular Expressions - For form validation
 - Progressive Enhancement - JavaScript added without making the page dependent upon JavaScript. -->
