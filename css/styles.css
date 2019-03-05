@@ -27,7 +27,9 @@ body {
   justify-content: space-evenly;
   flex-direction: column;
   display: flex;
-  height: 100vh;
+	height: 100vh;
+		background-color: rgba(238, 255, 0, 0.582);
+
 }
 
 li, ol, ul {
@@ -71,7 +73,7 @@ button {
   justify-content: space-around;
   height: 100%;
   max-height: 900px;
-  text-align: center;
+	text-align: center;
 }
 
 .section {
@@ -172,7 +174,7 @@ button {
   bottom: 0;
   left: 0;
   right: 0;
-  border-radius: 5px;
+	border-radius: 5px;
 }
 
 .title {

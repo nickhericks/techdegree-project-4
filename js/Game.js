@@ -1,7 +1,15 @@
-// Class called Game
+// Class called Game that manages logic of the game
 // @param
 class Game {
-  constructor() {}
+  constructor() {
+
+
+	}
+
+
+
+
+
+
 }
 
-const newGame = new Game();
