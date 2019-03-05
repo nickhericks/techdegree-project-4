@@ -28,7 +28,7 @@ body {
   flex-direction: column;
   display: flex;
 	height: 100vh;
-		background-color: rgba(238, 255, 0, 0.582);
+	background-color: #fff;  
 
 }
 
@@ -168,7 +168,7 @@ button {
   display: flex;
   flex-direction: column;
   position: fixed;
-  color: #FFFFFF;
+  color: #3a3f58;  
   justify-content: center;
   top: 0;
   bottom: 0;
@@ -178,15 +178,15 @@ button {
 }
 
 .title {
-  color: #FFF;
+  color: #3a3f58;  
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: rgba(242, 255, 62);
 }
 
 .start a {
-  color: #fff;
+  color: #3a3f58;  
 }
 
 .win {
