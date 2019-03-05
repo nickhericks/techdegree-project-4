@@ -15,17 +15,20 @@ class Game {
 
 		startGame() {
 		// Hide start screen overlay
+		overlay.style.display = 'none';
 
 		// Set activePhrase property to a random phrase
+		this.activePhrase = this.getRandomPhrase();
 
 		// Call the addPhraseToDisplay method on the active phrase
-
+		let newPhrase = new Phrase(this.activePhrase);
+		newPhrase.addPhraseToDisplay();
 	}
 
 	// Retrieve a random phrase from the phrase array
 	getRandomPhrase() {
-
-
+		let randomNum = Math.floor(Math.random() * 5);
+		return this.phrase[randomNum];
 	}
 
 	// 

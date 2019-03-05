@@ -4,11 +4,11 @@ class Phrase {
     this.phrase = phrase;
   }
 
-	
+
   // Adds the phrase to the gameboard
   addPhraseToDisplay() {
 
-
+		console.log(this.phrase);
 
 	}
 
