@@ -11,6 +11,7 @@ class Game {
 			'index four'
 		];
 		this.activePhrase = null;
+		this.selectedLetters = [];
 	}
 
 		startGame() {
@@ -50,16 +51,25 @@ class Game {
 
 		// If phrase includes guessed letter, the 'chosen' CSS class
 		// is added to the selected letter's onscreen keyboard button
-		// and the showMatchedLetter() method is called on the phrase
-		// and the checkForWin() method is called
-				// If the player has won the game, the gameOver() method is called
+		if (true) {
+			letterElement.classList.add('chosen');
+			
+			// The showMatchedLetter() method is called on the phrase
 
+			// The checkForWin() method is called
+			// If the player has won the game, the gameOver() method is called
+			if(this.checkForWin()) {
+				gameOver('win');
+			}
+		}
 	}
 
 	// Check if all letters in the active phrase have been revealed
 	checkForWin() {
 
-
+		// If all letters in the active phrase have
+		// been revealed, return true, else return false
+	
 	}
 
 	// 
