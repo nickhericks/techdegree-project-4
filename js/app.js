@@ -4,7 +4,7 @@ const overlay = document.querySelector('#overlay');
 
 let game;
 
-
+// When user clicks start/reset button
 button.addEventListener('click', function(event) {
 		// Hide the overlay element
 	overlay.style.display = 'none';
