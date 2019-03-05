@@ -83,12 +83,7 @@ class Game {
 		const overlay = document.querySelector('#overlay');
 		const message = document.querySelector('#game-over-message');
 		const button = document.querySelector('#btn__reset');
-		console.log('Game Over');
 
-		button.textContent = 'Play again';
-
-		// Display win or loss message on overlay screen
-		// with either the 'win' or 'lose' CSS class
 		if(outcome === 'win') {
 			message.textContent = 'You win!';
 			overlay.classList.add('win');
@@ -97,8 +92,8 @@ class Game {
 			message.textContent = 'Sorry, try again next time!';
 			overlay.classList.add('lose');
 		}
-
-		// Display the overlay element
+		
+		button.textContent = 'Play again';
 		overlay.style.display = 'flex';
 	}
 

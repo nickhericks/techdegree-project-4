@@ -7,7 +7,6 @@ class Phrase {
 
   // Adds the phrase to the gameboard
   addPhraseToDisplay() {
-
 		console.log(this.phrase);
 
 	}
