@@ -2,20 +2,20 @@
 const button = document.querySelector('#btn__reset');
 const overlay = document.querySelector('#overlay');
 const keyboard = document.querySelector('#qwerty');
+const keys = document.querySelectorAll('.key');
 let game;
 
 // When user clicks start/reset button
 button.addEventListener('click', function(event) {
 	// Initiate a new game object
 	game = new Game();
-
 	game.startGame();
 });
 
 
 // Event listener for onscreen keyboard
 keyboard.addEventListener('click', function(event) {
-	// Ensure event target clicked is a key
+	// Ensure event target clicked has a class of 'key'
 	if(event.target.classList.contains('key')) {
 		// Call handleInteraction() method on the clicked keyboard button
 		game.handleInteraction(event.target);
@@ -24,13 +24,13 @@ keyboard.addEventListener('click', function(event) {
 
 // Event listener for physical keyboard
 window.addEventListener('keyup', function(event) {
-	console.log(event);
 	// If key pressed is a-z
-	if( /[a-z]/.test(event.key) ) {
+	if( event.keyCode >= 65 && event.keyCode <= 90 ) {
+		console.log(event.key);
+		// Find button element in the DOM that matches the key pressed
+		let keyElement = Array.from(keys).filter(key => key.textContent === event.key);
 
-
-
-		console.log(keyboard);
-
+		// Call handleInteraction() method on the letter key pressed
+		game.handleInteraction(keyElement[0]);
 	}
 });

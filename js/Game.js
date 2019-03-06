@@ -61,7 +61,6 @@ class Game {
 			// If phrase does NOT include guessed letter, the 'wrong' CSS class
 			// is added to the selected letter's onscreen keyboard button
 			// and removeLife() is called
-			console.log(this.activePhrase.checkLetter(letter));
 			if(isMatch === false) {
 				keyElement.classList.add('wrong');
 				this.removeLife();
@@ -82,9 +81,7 @@ class Game {
 				}
 			}
 			// Disable selected letter's onscreen keyboard button
-			this.selectedLetters.push(letter);
-			console.log(`selectedLetters array: [${this.selectedLetters}]`);
-			
+			this.selectedLetters.push(letter);			
 		}
 	}
 
@@ -96,8 +93,8 @@ class Game {
 	checkForWin() {
 		const allLetters = document.querySelectorAll('.letter');
 		const shownLetters = document.querySelectorAll('.show');
-		console.log(`allLetters: ${allLetters.length}`);
-		console.log(`shownLetters: ${shownLetters.length}`);
+
+		// If all letters have been displayed
 		if(allLetters.length === shownLetters.length) {
 			return true;
 		}
@@ -113,13 +110,11 @@ class Game {
 	* Checks if player has remaining lives and ends game if player is out
 	*/
 	removeLife() {
-		// Remove life from scoreboard (change heart image shown)
-		console.log(this.missed);
+		// Get heart element based on number of missed letters selected
 		let heart = document.getElementsByTagName('img')[this.missed];
 		heart.setAttribute('src', 'images/lostHeart.png');
 		// increment the 'missed' property
 		this.missed++
-		console.log(`this.missed = ${this.missed}`);
 		
 		// If the player has lost the game, call gameOver()
 		if(this.missed === 5) {
@@ -149,11 +144,5 @@ class Game {
 		button.textContent = 'Play again';
 		overlay.style.display = 'flex';
 	}
-
-
-
-
-
-
 }
 

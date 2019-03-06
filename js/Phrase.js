@@ -8,13 +8,13 @@ class Phrase {
   // Adds letter placeholders for the phrase to the gameboard
   addPhraseToDisplay() {
 		const ul = document.querySelector('#phrase').firstElementChild;
-		
+		console.log(this.phrase);
+
+		// Reset phrase spaces
 		ul.innerHTML = "";
 
-		console.log(this.phrase);
 		// Create array from each character in the phrase
 		const characters = this.phrase.split('');
-		console.log(`characters array: [${characters}]`);
 		
 		// Loop through phrase array
 		characters.forEach(character => {
