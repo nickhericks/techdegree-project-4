@@ -27,11 +27,7 @@ class Phrase {
 				element.classList.add('letter', character);
 				element.textContent = character;
 			}
-			ul.appendChild(element);
-			
-			
-			
-			// console.log(element);
+			ul.appendChild(element);			
 		});
 	}
 

@@ -2,7 +2,6 @@
 const button = document.querySelector('#btn__reset');
 const overlay = document.querySelector('#overlay');
 const keyboard = document.querySelector('#qwerty');
-
 let game;
 
 // When user clicks start/reset button
