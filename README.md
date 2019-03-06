@@ -40,16 +40,16 @@ An example of one of the JavaScript object methods in this project:
 
 ```javascript
 /**
-	* Reveals the letter(s) on the board that matches the player's selection
-	* @param (string) letter - Letter to display
-	*/
-  showMatchedLetter(letter) {
-		// Find all elements with class of letter
-		let matchedLetters = document.querySelectorAll('.' + letter);
+* Reveals the letter(s) on the board that matches the player's selection
+* @param (string) letter - Letter to display
+*/
+showMatchedLetter(letter) {
+	// Find all elements with class of letter
+	let matchedLetters = document.querySelectorAll('.' + letter);
 
-		// Add class of 'show' to those elements
-		matchedLetters.forEach( match => match.classList.add('show') );
-	}
+	// Add class of 'show' to those elements
+	matchedLetters.forEach( match => match.classList.add('show') );
+}
 ```
 
 ## Acknowledgements
