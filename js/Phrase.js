@@ -5,14 +5,16 @@ class Phrase {
   }
 
 
-  // Adds the phrase to the gameboard
+  // Adds letter placeholders for the phrase to the gameboard
   addPhraseToDisplay() {
 		const ul = document.querySelector('#phrase').firstElementChild;
 		
+		ul.innerHTML = "";
+
 		console.log(this.phrase);
 		// Create array from each character in the phrase
 		const characters = this.phrase.split('');
-		console.log(characters);
+		console.log(`characters array: [${characters}]`);
 		
 		// Loop through phrase array
 		characters.forEach(character => {
@@ -29,7 +31,7 @@ class Phrase {
 			
 			
 			
-			console.log(element);
+			// console.log(element);
 		});
 	}
 
@@ -37,9 +39,8 @@ class Phrase {
   // Checks if a letter is in the phrase
   checkLetter(letter) {
 		// If letter exists in phrase array...
-		if(true) {
-			showMatchedLetter(letter);
-		}
+		const isMatch = (this.phrase.includes(letter)) ? (true) : (false);
+		return isMatch;
 
 
 	}

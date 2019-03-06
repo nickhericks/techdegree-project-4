@@ -3,7 +3,7 @@
 class Game {
   constructor() {
 		this.missed = 0;
-		this.phrase = [
+		this.phrases = [
 			'index zero',
 			'index one',
 			'index two',
@@ -16,22 +16,29 @@ class Game {
 
 
 	startGame() {
+		// Remove 'wrong' and 'chosen' class from all keys
+		const allKeys = document.querySelectorAll('.key');
+		allKeys.forEach(key => key.classList.remove('wrong', 'chosen'));
+
+		// Reset hearts to full
+		const hearts = document.querySelectorAll('img');
+		hearts.forEach(heart => heart.setAttribute('src', 'images/liveHeart.png'));
+
 		// Hide start screen overlay
 		overlay.style.display = 'none';
 
-		// Set activePhrase property to a random phrase
-		this.activePhrase = this.getRandomPhrase();
-
-		// Call the addPhraseToDisplay method on the active phrase
-		let newPhrase = new Phrase(this.activePhrase);
-		newPhrase.addPhraseToDisplay();
+		// Set activePhrase property to a new random phrase
+		this.activePhrase = new Phrase(this.getRandomPhrase());
+		
+		//Call the addPhraseToDisplay method on the active phrase
+		this.activePhrase.addPhraseToDisplay();
 	}
 
 
 	// Retrieve a random phrase from the phrase array
 	getRandomPhrase() {
-		let randomNum = Math.floor(Math.random() * 5);
-		return this.phrase[randomNum];
+		let randomIndex = Math.floor(Math.random() * 5);
+		return this.phrases[randomIndex];
 	}
 
 
@@ -39,6 +46,7 @@ class Game {
 	handleInteraction(letterElement) {
 		console.log(letterElement);
 		let letter = letterElement.textContent;
+		let isMatch = this.activePhrase.checkLetter(letter);
 
 		// If letter clicked has not already been selected
 		if( (this.selectedLetters.includes(letter)) !== true ) {
@@ -46,7 +54,8 @@ class Game {
 			// If phrase does NOT include guessed letter, the 'wrong' CSS class
 			// is added to the selected letter's onscreen keyboard button
 			// and removeLife() is called
-			if(true) {
+			console.log(this.activePhrase.checkLetter(letter));
+			if(isMatch === false) {
 				letterElement.classList.add('wrong');
 				this.removeLife();
 			}
@@ -54,7 +63,7 @@ class Game {
 
 			// If phrase includes guessed letter, the 'chosen' CSS class
 			// is added to the selected letter's onscreen keyboard button
-			if (true) {
+			if (isMatch === true) {
 				letterElement.classList.add('chosen');
 				
 				// The showMatchedLetter() method is called on the phrase
@@ -67,7 +76,7 @@ class Game {
 			}
 			// Disable selected letter's onscreen keyboard button
 			this.selectedLetters.push(letter);
-			console.log(this.selectedLetters);
+			console.log(`selectedLetters array: [${this.selectedLetters}]`);
 			
 		}
 	}
@@ -90,7 +99,7 @@ class Game {
 		heart.setAttribute('src', 'images/lostHeart.png');
 		// increment the 'missed' property
 		this.missed++
-		console.log(this.missed);
+		console.log(`this.missed = ${this.missed}`);
 		
 		// If the player has lost the game, call gameOver()
 		if(this.missed === 5) {
