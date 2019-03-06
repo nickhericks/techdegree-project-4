@@ -1,5 +1,4 @@
 // Class called Game that manages logic of the game
-// @param
 class Game {
   constructor() {
 		this.missed = 0;
@@ -15,6 +14,7 @@ class Game {
 	}
 
 
+	// Initiates game play by resetting the game and selecting a phrase
 	startGame() {
 		// Remove 'wrong' and 'chosen' class from all keys
 		const allKeys = document.querySelectorAll('.key');
@@ -35,7 +35,10 @@ class Game {
 	}
 
 
-	// Retrieve a random phrase from the phrase array
+	/**
+	* Selects random phrase from 'this.phrases' array
+	* @return {string} Phrase string chosen to be used
+	*/
 	getRandomPhrase() {
 		let randomIndex = Math.floor(Math.random() * 5);
 		return this.phrases[randomIndex];
