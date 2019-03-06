@@ -36,16 +36,22 @@ class Phrase {
 	}
 
 
-  // Checks if a letter is in the phrase
+	/**
+	* Check if passed letter is in phrase
+	* @param (string) letter - Letter to check
+	* @return (boolean) isMatch
+	*/
   checkLetter(letter) {
 		// If letter exists in phrase array...
 		const isMatch = (this.phrase.includes(letter)) ? (true) : (false);
 		return isMatch;
-
-
 	}
 
-  // Reveals the letter(s) on the board that matches the player's selection
+
+	/**
+	* Reveals the letter(s) on the board that matches the player's selection
+	* @param (string) letter - Letter to display
+	*/
   showMatchedLetter(letter) {
 		// Find all elements with class of letter
 		let matchedLetters = document.querySelectorAll('.' + letter);

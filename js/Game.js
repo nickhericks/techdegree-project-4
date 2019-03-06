@@ -13,8 +13,9 @@ class Game {
 		this.selectedLetters = [];
 	}
 
-
-	// Initiates game play by resetting the game and selecting a phrase
+	/**
+	* Begins game by resetting the game and selecting a phrase
+	*/
 	startGame() {
 		// Remove 'wrong' and 'chosen' class from all keys
 		const allKeys = document.querySelectorAll('.key');
@@ -45,10 +46,13 @@ class Game {
 	}
 
 
-	// 
-	handleInteraction(letterElement) {
-		console.log(letterElement);
-		let letter = letterElement.textContent;
+	/**
+	* Handles onscreen keyboard button clicks
+	* @param (HTMLButtonElement) button - The clicked button element
+	*/
+	handleInteraction(keyElement) {
+		console.log(keyElement);
+		let letter = keyElement.textContent;
 		let isMatch = this.activePhrase.checkLetter(letter);
 
 		// If letter clicked has not already been selected
@@ -59,7 +63,7 @@ class Game {
 			// and removeLife() is called
 			console.log(this.activePhrase.checkLetter(letter));
 			if(isMatch === false) {
-				letterElement.classList.add('wrong');
+				keyElement.classList.add('wrong');
 				this.removeLife();
 			}
 
@@ -67,14 +71,14 @@ class Game {
 			// If phrase includes guessed letter, the 'chosen' CSS class
 			// is added to the selected letter's onscreen keyboard button
 			if (isMatch === true) {
-				letterElement.classList.add('chosen');
+				keyElement.classList.add('chosen');
 				
 				// The showMatchedLetter() method is called on the phrase
 				this.activePhrase.showMatchedLetter(letter);
 				// The checkForWin() method is called
 				// If the player has won the game, the gameOver() method is called
 				if(this.checkForWin()) {
-					this.gameOver('win');
+					this.gameOver(true);
 				}
 			}
 			// Disable selected letter's onscreen keyboard button
@@ -85,7 +89,10 @@ class Game {
 	}
 
 
-	// Check if all letters in the active phrase have been revealed
+	/**
+	* Check if all letters in the active phrase have been revealed
+	* @return {boolean} True if game has been won, false if game wasn't won
+	*/
 	checkForWin() {
 		const allLetters = document.querySelectorAll('.letter');
 		const shownLetters = document.querySelectorAll('.show');
@@ -97,13 +104,14 @@ class Game {
 		else {
 			return false;
 		}
-		// If all letters in the active phrase have
-		// been revealed, return true, else return false
-	
 	}
 
 
-	// 
+	/**
+	* Removes a life from the scoreboard
+	* Increases the value of the missed property
+	* Checks if player has remaining lives and ends game if player is out
+	*/
 	removeLife() {
 		// Remove life from scoreboard (change heart image shown)
 		console.log(this.missed);
@@ -115,22 +123,25 @@ class Game {
 		
 		// If the player has lost the game, call gameOver()
 		if(this.missed === 5) {
-			this.gameOver('lose');
+			this.gameOver(false);
 		}
 	}
 
 
-	// 
-	gameOver(outcome) {
+	/**
+	* Displays game over message
+	* @param {boolean} gameWon - Whether or not the user won the game
+	*/
+	gameOver(gameWon) {
 		const overlay = document.querySelector('#overlay');
 		const message = document.querySelector('#game-over-message');
 		const button = document.querySelector('#btn__reset');
 
-		if(outcome === 'win') {
+		if(gameWon) {
 			message.textContent = 'You win!';
 			overlay.classList.add('win');
 		}
-		else if (outcome === 'lose') {
+		else {
 			message.textContent = 'Sorry, try again next time!';
 			overlay.classList.add('lose');
 		}
