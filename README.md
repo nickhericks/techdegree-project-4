@@ -36,7 +36,7 @@ If the player completes the phrase before they run out of guesses, a winning scr
 In addition to completing the basic requirements for this techdegree project, I also added additional features including:
 
 - [x] Added functionality allowing players to use physical keyboard (instead of just the on-screen keyboard)
-- [x] Personalized CSS styling
+- [x] Personalized CSS styling (colors, fonts, etc.)
 
 ## Code example
 

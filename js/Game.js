@@ -3,11 +3,11 @@ class Game {
   constructor() {
 		this.missed = 0;
 		this.phrases = [
-			'index zero',
-			'index one',
-			'index two',
-			'index three',
-			'index four'
+			'hypertext markup language',
+			'cascading style sheets',
+			'javascript',
+			'react',
+			'python'
 		];
 		this.activePhrase = null;
 		this.selectedLetters = [];

@@ -11,7 +11,7 @@
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
-  --font-size-large: 5rem;
+  --font-size-large: 6rem;
   --font-size-medium: 2rem;
   --transition: all .2s ease-in-out;
 }
@@ -30,7 +30,7 @@ body {
   display: flex;
 	height: 100vh;
 	/* background-color: #ffd45e;   */
-	background-color: #a2eae2;  
+	background-color: #8ae6f7;  
 
 }
 
@@ -53,7 +53,7 @@ h1 {
 
 button {
   margin: 6px;
-  border: 2px solid black;
+  border: 2px solid var(--color-keys);
   padding: .5rem 1rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
