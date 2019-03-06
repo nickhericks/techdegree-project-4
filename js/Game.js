@@ -17,6 +17,8 @@ class Game {
 	* Begins game by resetting the game and selecting a phrase
 	*/
 	startGame() {
+		const overlay = document.querySelector('#overlay');
+
 		// Remove 'wrong' and 'chosen' class from all keys
 		const allKeys = document.querySelectorAll('.key');
 		allKeys.forEach(key => key.classList.remove('wrong', 'chosen'));
