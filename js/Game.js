@@ -14,7 +14,8 @@ class Game {
 		this.selectedLetters = [];
 	}
 
-		startGame() {
+
+	startGame() {
 		// Hide start screen overlay
 		overlay.style.display = 'none';
 
@@ -26,43 +27,51 @@ class Game {
 		newPhrase.addPhraseToDisplay();
 	}
 
+
 	// Retrieve a random phrase from the phrase array
 	getRandomPhrase() {
 		let randomNum = Math.floor(Math.random() * 5);
 		return this.phrase[randomNum];
 	}
 
+
 	// 
 	handleInteraction(letterElement) {
 		console.log(letterElement);
 		let letter = letterElement.textContent;
 
-		// Disable selected letter's onscreen keyboard button
-		
+		// If letter clicked has not already been selected
+		if( (this.selectedLetters.includes(letter)) !== true ) {
 
-		// If phrase does NOT include guessed letter, the 'wrong' CSS class
-		// is added to the selected letter's onscreen keyboard button
-		// and removeLife() is called
-		if(true) {
-			letterElement.classList.add('wrong');
-			this.removeLife();
-		}
-
-
-		// If phrase includes guessed letter, the 'chosen' CSS class
-		// is added to the selected letter's onscreen keyboard button
-		if (true) {
-			letterElement.classList.add('chosen');
-			
-			// The showMatchedLetter() method is called on the phrase
-
-			// The checkForWin() method is called
-			// If the player has won the game, the gameOver() method is called
-			if(this.checkForWin()) {
-				gameOver('win');
+			// If phrase does NOT include guessed letter, the 'wrong' CSS class
+			// is added to the selected letter's onscreen keyboard button
+			// and removeLife() is called
+			if(true) {
+				letterElement.classList.add('wrong');
+				this.removeLife();
 			}
+
+
+			// If phrase includes guessed letter, the 'chosen' CSS class
+			// is added to the selected letter's onscreen keyboard button
+			if (true) {
+				letterElement.classList.add('chosen');
+				
+				// The showMatchedLetter() method is called on the phrase
+
+				// The checkForWin() method is called
+				// If the player has won the game, the gameOver() method is called
+				if(this.checkForWin()) {
+					gameOver('win');
+				}
+			}
+			// Disable selected letter's onscreen keyboard button
+			this.selectedLetters.push(letter);
+			console.log(this.selectedLetters);
+			
 		}
 	}
+
 
 	// Check if all letters in the active phrase have been revealed
 	checkForWin() {
@@ -71,6 +80,7 @@ class Game {
 		// been revealed, return true, else return false
 	
 	}
+
 
 	// 
 	removeLife() {
@@ -87,6 +97,7 @@ class Game {
 			this.gameOver('lose');
 		}
 	}
+
 
 	// 
 	gameOver(outcome) {

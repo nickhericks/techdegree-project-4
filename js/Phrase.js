@@ -1,14 +1,13 @@
 // Class called Phrase that creates an array of Phrase objects
 class Phrase {
   constructor(phrase) {
-    this.phrase = phrase;
+		this.phrase = phrase;
   }
 
 
   // Adds the phrase to the gameboard
   addPhraseToDisplay() {
 		const ul = document.querySelector('#phrase').firstElementChild;
-		console.log(ul);
 		
 		console.log(this.phrase);
 		// Create array from each character in the phrase
@@ -36,17 +35,21 @@ class Phrase {
 
 
   // Checks if a letter is in the phrase
-  checkLetter() {
-
-
+  checkLetter(letter) {
+		// If letter exists in phrase array...
+		if(true) {
+			showMatchedLetter(letter);
+		}
 
 
 	}
 
   // Reveals the letter(s) on the board that matches the player's selection
-  showMatchedLetter() {
+  showMatchedLetter(letter) {
+		// Find all elements with class of letter
+		let matchedLetters = document.querySelectorAll('.' + letter);
 
-
-
+		// Add class of 'show' to those elements
+		matchedLetters.forEach( match => match.classList.add('show') );
 	}
 }
