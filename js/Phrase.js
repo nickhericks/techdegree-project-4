@@ -24,7 +24,7 @@ class Phrase {
 				element.classList.add('space');
 			}
 			else {
-				element.classList.add('hide', 'letter', character);
+				element.classList.add('letter', character);
 				element.textContent = character;
 			}
 			ul.appendChild(element);

@@ -71,7 +71,7 @@ class Game {
 				// The checkForWin() method is called
 				// If the player has won the game, the gameOver() method is called
 				if(this.checkForWin()) {
-					gameOver('win');
+					this.gameOver('win');
 				}
 			}
 			// Disable selected letter's onscreen keyboard button
@@ -84,7 +84,16 @@ class Game {
 
 	// Check if all letters in the active phrase have been revealed
 	checkForWin() {
-
+		const allLetters = document.querySelectorAll('.letter');
+		const shownLetters = document.querySelectorAll('.show');
+		console.log(`allLetters: ${allLetters.length}`);
+		console.log(`shownLetters: ${shownLetters.length}`);
+		if(allLetters.length === shownLetters.length) {
+			return true;
+		}
+		else {
+			return false;
+		}
 		// If all letters in the active phrase have
 		// been revealed, return true, else return false
 	
