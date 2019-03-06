@@ -21,3 +21,16 @@ keyboard.addEventListener('click', function(event) {
 		game.handleInteraction(event.target);
 	}
 });
+
+// Event listener for physical keyboard
+window.addEventListener('keyup', function(event) {
+	console.log(event);
+	// If key pressed is a-z
+	if( /[a-z]/.test(event.key) ) {
+
+
+
+		console.log(keyboard);
+
+	}
+});
