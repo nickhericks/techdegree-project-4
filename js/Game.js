@@ -20,7 +20,7 @@ class Game {
 		const allKeys = document.querySelectorAll('.key');
 		allKeys.forEach(key => key.classList.remove('wrong', 'chosen'));
 
-		// Reset hearts to full
+		// Reset hearts images
 		const hearts = document.querySelectorAll('img');
 		hearts.forEach(heart => heart.setAttribute('src', 'images/liveHeart.png'));
 
