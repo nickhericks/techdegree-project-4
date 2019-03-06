@@ -67,7 +67,7 @@ class Game {
 				letterElement.classList.add('chosen');
 				
 				// The showMatchedLetter() method is called on the phrase
-
+				this.activePhrase.showMatchedLetter(letter);
 				// The checkForWin() method is called
 				// If the player has won the game, the gameOver() method is called
 				if(this.checkForWin()) {
