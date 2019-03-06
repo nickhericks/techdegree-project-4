@@ -26,7 +26,6 @@ keyboard.addEventListener('click', function(event) {
 window.addEventListener('keyup', function(event) {
 	// If key pressed is a-z
 	if( event.keyCode >= 65 && event.keyCode <= 90 ) {
-		console.log(event.key);
 		// Find button element in the DOM that matches the key pressed
 		let keyElement = Array.from(keys).filter(key => key.textContent === event.key);
 

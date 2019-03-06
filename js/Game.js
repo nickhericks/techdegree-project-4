@@ -53,31 +53,29 @@ class Game {
 	* @param (HTMLButtonElement) button - The clicked button element
 	*/
 	handleInteraction(keyElement) {
-		console.log(keyElement);
 		let letter = keyElement.textContent;
 		let isMatch = this.activePhrase.checkLetter(letter);
 
 		// If letter clicked has not already been selected
 		if( (this.selectedLetters.includes(letter)) !== true ) {
 
-			// If phrase does NOT include guessed letter, the 'wrong' CSS class
-			// is added to the selected letter's onscreen keyboard button
-			// and removeLife() is called
+			// If phrase does NOT include guessed letter
 			if(isMatch === false) {
+				// The 'wrong' class is added to the key button element
 				keyElement.classList.add('wrong');
+				
 				this.removeLife();
 			}
 
-
-			// If phrase includes guessed letter, the 'chosen' CSS class
-			// is added to the selected letter's onscreen keyboard button
+			// If the phrase DOES include the guessed letter
 			if (isMatch === true) {
+				// The 'chosen' class is added to the key button element
 				keyElement.classList.add('chosen');
 				
 				// The showMatchedLetter() method is called on the phrase
 				this.activePhrase.showMatchedLetter(letter);
-				// The checkForWin() method is called
-				// If the player has won the game, the gameOver() method is called
+
+				// If the checkForWin() method returns true
 				if(this.checkForWin()) {
 					this.gameOver(true);
 				}

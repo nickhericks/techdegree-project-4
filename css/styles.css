@@ -1,6 +1,3 @@
-/* Main styles */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
-
 /* Variables */
 
 :root {
@@ -20,7 +17,6 @@
 
 * {
   box-sizing: border-box;
-	/* font-family: 'Montserrat', sans-serif; */
 	font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
@@ -29,7 +25,6 @@ body {
   flex-direction: column;
   display: flex;
 	height: 100vh;
-	/* background-color: #ffd45e;   */
 	background-color: #8ae6f7;  
 
 }
@@ -57,7 +52,7 @@ button {
   padding: .5rem 1rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
-  background-color: var(--color-keys-light);
+  background-color: white;
   border-radius: 5px;
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
@@ -114,11 +109,9 @@ button {
   width: 15px;
 }
 
-
-
 .show {
   color: #4d85be;
-  background-color: white;
+  background-color: var(--color-keys-light);
   font-size: var(--font-size-medium);
   height: 65px;
   width: 65px;
@@ -140,12 +133,10 @@ button {
 .chosen {
   background:  var(--color-win);
   border-radius: 5px;
-  /* font-size: var(--font-size-medium); */
   color: #FFFFFF;
 }
 
 .wrong {
-  /* background: #f5785f; */
   background:  var(--color-lose);
   color: #FFFFFF;
 }

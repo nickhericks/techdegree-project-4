@@ -6,8 +6,7 @@ This project uses Object-Oriented JavaScript to select a random, hidden phrase, 
 
 ---
 
-<!-- <img src="https://res.cloudinary.com/dtqevfsxh/image/upload/v1550234182/portfolio/interactive-form-1.png" width="400px"><img src="https://res.cloudinary.com/dtqevfsxh/image/upload/v1550218646/portfolio/screenshot-padding-github.png" width="50px">
-<img src="https://res.cloudinary.com/dtqevfsxh/image/upload/v1550234182/portfolio/interactive-form-2.png" width="400px"> -->
+<img src="https://res.cloudinary.com/dtqevfsxh/image/upload/v1551887069/portfolio/phrasehunter.png" width="899px">
 
 ## View project
 
@@ -23,13 +22,10 @@ If the player completes the phrase before they run out of guesses, a winning scr
 
 ## Techniques and concepts
 
-<!-- - jQuery - For document traversal/manipulation, event handling and animation
-- Regular Expressions - For form validation
-- Progressive Enhancement - JavaScript added without making the page dependent upon JavaScript. -->
-
 - Object-Oriented Programming
 - JavaScript classes
-- Array iteration using .forEach(), .map(), .filter(), and .reduce()
+- Array iteration methods
+- CSS variables
 
 ## Additional features
 
@@ -40,21 +36,21 @@ In addition to completing the basic requirements for this techdegree project, I 
 
 ## Code example
 
-<!-- An example of one of the JavaScript functions in this project:
-1. The validEmail function  uses a regular expression to test the value of the email field and assigns the result to an emailIsValid variable
-2. A switch statement is then used to determine if an error message is shown or hidden.
-3. The emailIsValid variable is then returned and later used along with other form field validation functions to determine if the user can submit the form.
+An example of one of the JavaScript object methods in this project:
 
 ```javascript
-// Check email value, show appropriate errors and return true if no errors
-const validEmail = function() {
-  const emailIsValid = /^[^@]+@[^@]+\.[a-z]+$/i.test($($email).val());
-  // If name is valid, hide errors, else show errors
-  emailIsValid ? (removeError($($email), $emailError)) : (showError($($email), $emailError));
-  // Return true if valid
-  return emailIsValid;
-}
-``` -->
+/**
+	* Reveals the letter(s) on the board that matches the player's selection
+	* @param (string) letter - Letter to display
+	*/
+  showMatchedLetter(letter) {
+		// Find all elements with class of letter
+		let matchedLetters = document.querySelectorAll('.' + letter);
+
+		// Add class of 'show' to those elements
+		matchedLetters.forEach( match => match.classList.add('show') );
+	}
+```
 
 ## Acknowledgements
 
