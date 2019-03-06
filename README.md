@@ -47,8 +47,8 @@ showMatchedLetter(letter) {
   // Find all elements with class of letter
   let matchedLetters = document.querySelectorAll('.' + letter);
 
-	// Add class of 'show' to those elements
-	matchedLetters.forEach( match => match.classList.add('show') );
+  // Add class of 'show' to those elements
+  matchedLetters.forEach( match => match.classList.add('show') );
 }
 ```
 
