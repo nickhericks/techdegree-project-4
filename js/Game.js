@@ -77,7 +77,7 @@ class Game {
 
 				// If the checkForWin() method returns true
 				if(this.checkForWin()) {
-					this.gameOver(true);
+					this.gameOver();
 				}
 			}
 			// Disable selected letter's onscreen keyboard button
@@ -112,13 +112,16 @@ class Game {
 	removeLife() {
 		// Get heart element based on number of missed letters selected
 		let heart = document.getElementsByTagName('img')[this.missed];
+
+		// Update heart element image
 		heart.setAttribute('src', 'images/lostHeart.png');
+
 		// increment the 'missed' property
 		this.missed++
 		
 		// If the player has lost the game, call gameOver()
 		if(this.missed === 5) {
-			this.gameOver(false);
+			this.gameOver();
 		}
 	}
 
@@ -141,10 +144,9 @@ class Game {
 
 	/**
 	* Displays custom overlay depending on win or lose
-	* @param {boolean} gameWon - Whether or not the user won the game
 	*/
-	gameOver(gameWon) {
-		if(gameWon) {
+	gameOver() {
+		if(this.missed < 5) {
 			this.updateOverlay('You win!', 'win');
 		}
 		else {
