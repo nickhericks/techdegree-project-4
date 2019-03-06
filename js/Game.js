@@ -122,27 +122,34 @@ class Game {
 		}
 	}
 
-
 	/**
 	* Displays game over message
-	* @param {boolean} gameWon - Whether or not the user won the game
 	*/
-	gameOver(gameWon) {
+	updateOverlay(newMessage, newClass) {
 		const overlay = document.querySelector('#overlay');
 		const message = document.querySelector('#game-over-message');
 		const button = document.querySelector('#btn__reset');
 
-		if(gameWon) {
-			message.textContent = 'You win!';
-			overlay.classList.add('win');
-		}
-		else {
-			message.textContent = 'Sorry, try again next time!';
-			overlay.classList.add('lose');
-		}
-		
+		overlay.classList.remove('win', 'lose');
+
+		message.textContent = newMessage;
+		overlay.classList.add(newClass);
+
 		button.textContent = 'Play again';
 		overlay.style.display = 'flex';
+	}
+
+	/**
+	* Displays custom overlay depending on win or lose
+	* @param {boolean} gameWon - Whether or not the user won the game
+	*/
+	gameOver(gameWon) {
+		if(gameWon) {
+			this.updateOverlay('You win!', 'win');
+		}
+		else {
+			this.updateOverlay('Sorry, try again next time!', 'lose');
+		}
 	}
 }
 
