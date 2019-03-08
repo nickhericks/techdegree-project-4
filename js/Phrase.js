@@ -34,12 +34,10 @@ class Phrase {
 	/**
 	* Check if passed letter is in phrase
 	* @param (string) letter - Letter to check
-	* @return (boolean) isMatch
+	* @return (boolean) Return true if letter exists in phrase array
 	*/
   checkLetter(letter) {
-		// If letter exists in phrase array...
-		const isMatch = (this.phrase.includes(letter)) ? (true) : (false);
-		return isMatch;
+		return this.phrase.includes(letter);
 	}
 
 
