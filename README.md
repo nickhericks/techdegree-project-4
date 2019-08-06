@@ -6,11 +6,13 @@ This project uses Object-Oriented JavaScript to select a random, hidden phrase, 
 
 ---
 
-<img src="https://res.cloudinary.com/dtqevfsxh/image/upload/v1551887069/portfolio/phrasehunter.png" width="899px">
 
 ## View project
-
 :mag: Live version available at [nickhericks.github.io/techdegree-project-4/](https://nickhericks.github.io/techdegree-project-4/)
+
+<br><br>
+
+<img src="https://res.cloudinary.com/dtqevfsxh/image/upload/v1551887069/portfolio/phrasehunter.png" width="899px">
 
 ## Project objective
 
